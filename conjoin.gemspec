@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dominate"
   spec.add_dependency "rack_csrf", "~> 2.4.0", '>= 2.4.0'
   spec.add_dependency "rack-protection", "~> 1.5.2", '>= 1.5.2'
-  spec.add_dependency "r18n-core", "~> 1.1.10", '>= 1.1.10'
+  spec.add_dependency "r18n-core", "~> 2.1.2", '>= 2.1.2'
   spec.add_dependency 'highline', '~> 1.6.11', '>= 1.6.11'
   spec.add_dependency "mab", '~> 0.0.3', '>= 0.0.3'
   spec.add_dependency "tilt", '>= 1.4.1', '>= 1.4.1'

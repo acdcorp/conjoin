@@ -10,15 +10,16 @@ ENV['RACK_ENV'] ||= 'development'
 require 'rubygems'
 require 'bundler/setup'
 require 'clap'
+require 'conjoin/version'
 
 module Conjoin
   module CLI
     extend self
 
-    VERSION = '0.1.0'
+    VERSION = Conjoin::VERSION
 
     def version
-      say VERSION
+     p VERSION
     end
 
     def help(command)

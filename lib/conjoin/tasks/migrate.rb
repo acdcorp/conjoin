@@ -139,6 +139,15 @@ module ActiveRecordTasks
       username: db.user,
       password: db.password
     }
+    if db.scheme == 'mysql2' && db.query
+      ssl_hash = db.query.split('&').map{|c| [c.split('=')[0],c.split('=')[1]] }.to_h
+      mysql_ssl = {
+        sslca: ssl_hash['sslca'],
+        sslcert: ssl_hash['sslcert'],
+        sslkey: ssl_hash['sslkey']
+      }
+      ActiveRecord::Base.configurations['default'] = ActiveRecord::Base.configurations['default'].merge(mysql_ssl)
+    end
   end
 
   def connect_to_active_record

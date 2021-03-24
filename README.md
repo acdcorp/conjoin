@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+ #### Old applications with RUBY older than 2.3
+
+    Please use branch 1.0-stable or tag v1.0.0
+
+ #### To support connection with ssl certificates but old RUBY version
+
+    Please use branch activerecord-config-with-ssl or tag v1.1.0
 
 ## Contributing
 

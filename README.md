@@ -26,6 +26,10 @@ Or install it yourself as:
 
     Please use branch activerecord-config-with-ssl or tag v1.1.0
 
+ #### To support newest mysql, activerecord 4.2.11 and ruby versions
+
+    Please use v1.2.0
+
 ## Contributing
 
 1. Fork it

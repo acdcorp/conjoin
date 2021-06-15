@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "stylus", '~> 1.0.1', '>= 1.0.1'
   spec.add_dependency "coffee-script", '~> 2.2.0', '>= 2.2.0'
   spec.add_dependency "slim", '~> 2.0.2', '>= 2.0.2'
-  spec.add_dependency "mimemagic", '~> 0.2.1', '>= 0.2.1'
+  spec.add_dependency "mimemagic", '~> 0.3.7', '>= 0.3.7'
   spec.add_dependency "hashie", '~> 2.1.1', '>= 2.1.1'
   spec.add_dependency "chronic", '~> 0.10.2', '>= 0.10.2'
   spec.add_dependency "unicorn", '~> 4.8.2', '>= 4.8.2'

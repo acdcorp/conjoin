@@ -67,9 +67,17 @@ module Conjoin
                 req.env['warden'].set_user(user, scope: :user) if user
               when :shield
                 req.session.clear
-                req.session[AuthToken.settings.klass] = user.id if user
+                if user && subro_protection?(user)
+                  error_subro = false
+                  req.session[AuthToken.settings.klass] = user.id
+                else
+                  error_subro = true
+                end
               end
 
+              if error_subro
+                res.redirect 'login?return%2F&error_subro=1'
+              end
               res.redirect 'login?return=%2F&sso_error=1' unless user
             end
           end
@@ -78,6 +86,14 @@ module Conjoin
         end
 
         private
+
+        def subro_protection?(user)
+          if AuthToken.settings.klass.split(':').first == 'Subrolink'
+            user.company.id == ENV['ACD_COMPANY_ID'].to_i
+          else
+            true
+          end
+        end
 
         def return_signature
           s3 = S3Signature.new policy_data
